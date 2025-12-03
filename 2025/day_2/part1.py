@@ -1,9 +1,4 @@
-def load_inp():
-    r = open("./2025/input/day_2.txt").read().strip()
-    ranges = r.split(",")
-
-    return ranges
-
+from load_input import load_inp
 
 def part_one():
     ranges = load_inp()
