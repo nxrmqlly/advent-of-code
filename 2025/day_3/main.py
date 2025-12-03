@@ -13,12 +13,12 @@ def max_joltage(battery_bank: str) -> tuple[int, str]:
 def joltage_str(bank: str, batt_count: int = 2):
     if batt_count == 2:
         idx, d1 = max_joltage(bank[:-1])
-        _, d2 = max_joltage(bank[idx+1:])
+        _, d2 = max_joltage(bank[idx + 1 :])
 
         return d1 + d2
 
-    idx, digit = max_joltage(bank[:-batt_count + 1])
-    return digit + joltage_str(bank[idx + 1:], batt_count - 1)
+    idx, digit = max_joltage(bank[: -batt_count + 1])
+    return digit + joltage_str(bank[idx + 1 :], batt_count - 1)
 
 
 def part_one(batt_count: int = 2):
