@@ -45,10 +45,11 @@ def part_two():
 
     while True:
 
-        ### ! This logic was beautiful, but not needed in the end :( ###
-        ### ! Seems like, without copy is faster, it has the same work anyways ###
-        ### ! without copy time: 8.152340s, 9.975292s, 8.786981s ###
-        ### ! with copy time: 10.806175s, 14.117379s, 12.503559s ###
+        ### ! This logic was beautiful, but not needed in the end :( 
+        ### ! Seems like, without copy is faster, it has the same work anyways 
+        ### ! without copy time: 8.152340s, 9.975292s, 8.786981s 
+        ### ! with copy time: 10.806175s, 14.117379s, 12.503559s 
+        
         # check_nearby() when checking the in-place replaced row, could return bad results.
         # this creates a shallow copy of old grid so I dont have such problems.
         # old_rows = [
