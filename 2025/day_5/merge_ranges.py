@@ -2,8 +2,8 @@ def merge_ranges(ranges: list[tuple[int, int]]) -> list[tuple[int, int]]:
     """
     Merges overlapping ranges in a list of (low, high) tuples.
     """
-    
-    ranges.sort()  # ensure its sorted
+
+    ranges = sorted(ranges)  # prefer this over .sort() to avoid mutating input
 
     current_low, current_high = ranges[0]
     new = []
@@ -16,7 +16,8 @@ def merge_ranges(ranges: list[tuple[int, int]]) -> list[tuple[int, int]]:
             current_high = max(current_high, high)
 
         else:  # * no overlap
-            new.append((current_low, current_high))  # push the interval, (no more mergables)
+            # push the interval (no more merges)
+            new.append((current_low, current_high))
             current_low, current_high = low, high  # start new interval for comparison
 
     # finally append the last interval
