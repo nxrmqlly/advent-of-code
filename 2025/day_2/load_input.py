@@ -1,5 +1,5 @@
 def load_inp() -> list[str]:
-    r = open("./2025/input/day_2.txt").read().strip()
-    ranges = r.split(",")
+    with open("./2025/input/day_2.txt") as f:
+        ranges = f.read().strip().split(",")
 
     return ranges

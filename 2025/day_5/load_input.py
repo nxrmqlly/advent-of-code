@@ -17,7 +17,8 @@ def load_input(test: bool = False) -> tuple[list[tuple[int, int]], list[int]]:
     if test:
         dat = test_dat.strip()
     else:
-        dat = open("./2025/input/day_5.txt").read().strip()
+        with open("./2025/input/day_5.txt") as f:
+            dat = f.read().strip()
 
     ranges, ingredients = dat.split("\n\n")
 
@@ -27,7 +28,7 @@ def load_input(test: bool = False) -> tuple[list[tuple[int, int]], list[int]]:
     # parse ranges
     fin_ranges = []
     for line in ranges.split("\n"):
-        low, high = map(int, line.split("-"))
-        fin_ranges.append((int(low), int(high)))
+        low, high = map(int, line.split("-")) # run int() on both
+        fin_ranges.append(low, high)
 
     return fin_ranges, ingredients
