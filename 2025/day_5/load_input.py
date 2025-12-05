@@ -28,7 +28,7 @@ def load_input(test: bool = False) -> tuple[list[tuple[int, int]], list[int]]:
     # parse ranges
     fin_ranges = []
     for line in ranges.split("\n"):
-        low, high = map(int, line.split("-")) # run int() on both
-        fin_ranges.append(low, high)
+        low, high = map(int, line.split("-"))  # run int() on both
+        fin_ranges.append((low, high))
 
     return fin_ranges, ingredients
