@@ -1,6 +1,5 @@
-from load_input import load_input
+from load_input import load_input, Machine
 from itertools import combinations
-from models import Machine
 import z3  # im sorry
 
 
